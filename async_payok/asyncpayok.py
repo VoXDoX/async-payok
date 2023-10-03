@@ -93,6 +93,8 @@ class AsyncPayok:
 		)
 		transactions = []
 		for transaction in response.values():
+			if not transaction["method"]:
+				transaction['method'] = "Не выбран"
 			transactions.append(Invoice(**transaction))
 
 		return transactions

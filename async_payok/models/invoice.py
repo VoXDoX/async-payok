@@ -1,6 +1,6 @@
 # © copyright by VoX DoX
-from typing import Union
-from pydantic import BaseModel
+from typing import Union, Optional
+from pydantic import BaseModel, Field
 
 
 class Invoice(BaseModel):
@@ -21,6 +21,6 @@ class Invoice(BaseModel):
 	date: str
 	pay_date: str
 	transaction_status: int
-	custom_fields: str
+	custom_fields: Optional[str]
 	webhook_status: int
 	webhook_amount: int
